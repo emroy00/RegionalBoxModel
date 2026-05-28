@@ -1,6 +1,7 @@
 #!/bin/bash
 # 
 #Script for selecting and moving raw GC data from OutputDir to submission data repository.
+#script should be rerun with each inpath/outpath combination to process raw GC data.
 
 module load cdo/1.9.10_oel8
 module load nco/5.0.1
@@ -8,9 +9,6 @@ module load nco/5.0.1
 #select pair for respective sensitivity run
 year=2019
 months=$(seq -f "%02g" 1 12)
-
-#inpath=/net/fs03/d0/emroy/GCrundir/run0045/OutputDir
-#outpath=/home/emroy/fs03/paper_staging/RegionalBoxModel/data/GCdata/GC_output/STND
 
 #inpath=/net/fs03/d0/emroy/GCrundir/run0051/OutputDir
 #outpath=/home/emroy/fs03/paper_staging/RegionalBoxModel/data/GCdata/GC_output/NEST
@@ -49,6 +47,7 @@ do
   cp ${inpath}/GEOSChem.DryDep.${year}${month}01_0000z.nc4 .
   cp ${inpath}/GEOSChem.MercuryEmis.${year}${month}01_0000z.nc4 .
   cp ${inpath}/HEMCO_diagnostics.${year}${month}010000.nc .
+  cp ${inpath}/GEOSChem.ProdLoss.${year}${month}01_0000z.nc4 .
 done
 
 #create aggregated full year concentration file (useful for supplement)

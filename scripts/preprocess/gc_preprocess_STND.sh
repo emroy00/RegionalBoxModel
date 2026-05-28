@@ -19,10 +19,10 @@ cd $outpath
 for month in $months
 do
   ncks -v SpeciesConcVV_Hg0,hyai,hybi,ilev ${inpath}/GEOSChem.SpeciesConcHF.${year}${month}01_0000z.nc4 GEOSChem.SpeciesConcHF.${year}${month}01_0000z.nc4
-  #cdo selvar,SpeciesConcVV_Hg0 ${inpath}/GEOSChem.SpeciesConcHF.${year}${month}01_0000z.nc4 GEOSChem.SpeciesConcHF.${year}${month}01_0000z.nc4
-  #cp ${inpath}/GEOSChem.DryDep.${year}${month}01_0000z.nc4 .
-  #cp ${inpath}/GEOSChem.MercuryEmis.${year}${month}01_0000z.nc4 .
-  #cp ${inpath}/HEMCO_diagnostics.${year}${month}010000.nc .
+  cp ${inpath}/GEOSChem.DryDep.${year}${month}01_0000z.nc4 .
+  cp ${inpath}/GEOSChem.MercuryEmis.${year}${month}01_0000z.nc4 .
+  cp ${inpath}/HEMCO_diagnostics.${year}${month}010000.nc .
+  cp ${inpath}/GEOSChem.ProdLoss.${year}${month}01_0000z.nc4 .
 done
 
 #create aggregated full year concentration file (useful for supplement)
